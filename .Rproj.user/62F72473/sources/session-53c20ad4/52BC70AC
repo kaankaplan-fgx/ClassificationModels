@@ -3,9 +3,9 @@
     "path": "~/Documents/R Projects/R1/DogrusalOlmayanRegresyon/classificationModels/ClassificationModels.R",
     "project_path": "ClassificationModels.R",
     "type": "r_source",
-    "hash": "4211332",
+    "hash": "0",
     "contents": "",
-    "dirty": false,
+    "dirty": true,
     "created": 1732390493711.0,
     "source_on_save": false,
     "relative_order": 1,
@@ -13,15 +13,15 @@
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "103,1",
-        "scrollLine": "82"
+        "cursorPosition": "131,38",
+        "scrollLine": "125"
     },
     "folds": "",
     "lastKnownWriteTime": 1732403941,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1732403941739,
+    "last_content_update": 1732404865687,
     "read_only": false,
     "read_only_alternatives": []
 }

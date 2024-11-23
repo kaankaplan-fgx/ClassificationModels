@@ -109,3 +109,58 @@ defaultSummary(data.frame(
   pred = predict(lr_model_tuning, test_x)
 ))
 
+
+#KNN (K-Nearest Neighbors)
+
+knn_train <- education
+knn_test <- test
+
+knn_train <- knn_train %>% dplyr::select(-default)
+knn_test <- knn_test %>% select(-default)
+
+knn_train$student <- as.numeric(knn_train$student)
+knn_test$student <- as.numeric(knn_test$student)
+
+
+knn_model <- knn(train = knn_train, test = knn_test, cl = education_y, k = 5)
+summary(knn_model)
+calculate_error(test_y, knn_model)
+
+knn_control <- trainControl(
+  method = "cv",
+  number = 10,
+  summaryFunction = multiClassSummary(),
+  classProbs = TRUE
+)
+
+knn_grid <- data.frame(
+  k = c(1,20)
+)
+
+set.seed(3232)
+
+knn_model_tuning <- train(
+  knn_train, education_y,
+  method = "knn",
+  trControl = knn_control,
+  tuneGrid = knn_grid,
+  metric = "ROC",
+  preProcess = c("center", "scale")
+)
+
+knn_model_tuning
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
